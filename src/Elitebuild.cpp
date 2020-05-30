@@ -18,10 +18,18 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "../include/src/Elitebuild.hpp"
+// Print
+#include "../include/src/Print/Colors.hpp"
 #include "../include/src/Print/Print.hpp"
+
+// Help
 #include "../include/src/Help/Help.hpp"
+
+// File
 #include "../include/src/File/File.hpp"
+
+// Main
+#include "../include/src/Elitebuild.hpp"
 
 File path;
 
