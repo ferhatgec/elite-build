@@ -13,5 +13,7 @@
 #define ELITEBUILD_VERSION "0.1"
 #define ELITE_BUILD_STATE "alpha"
 
+#define Slashn printlnf("\n");
+
 #endif // ELITE_BUILD_HPP
 

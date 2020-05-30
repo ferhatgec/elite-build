@@ -24,6 +24,10 @@ std::string EraseAllSubString(std::string & mainString, const std::string & eras
 class File {
 public:
     virtual char* Path();
+    virtual void FindElitefile(const char *);
+    std::string GetCurrentWorkingDir();
 };
+
+
 
 #endif // FILE_HPP

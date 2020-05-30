@@ -25,11 +25,23 @@
 
 File path;
 
-int main(int argc, char** argv)
+int main(int argc, char *argv[])
 {
+    char * pch;
     if(argc < 2) {
         printlnf(Help.c_str());
+    //    path.FindElitefile();
         return 1;
+    }
+    for (int i = 0; i < argc; ++i) {
+        pch = strstr(argv[i], "-v");
+        if(pch)
+        {
+            printlnf(ELITEBUILD_VERSION);
+            printlnf("-");
+            printlnf(ELITE_BUILD_STATE);
+            Slashn
+        }
     }
     return 0;
 }
