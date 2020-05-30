@@ -15,11 +15,20 @@
 #include <sys/types.h>
 #include <stdio.h> 
 
+#ifdef WINDOWS
+#include <direct.h>
+#define GetCurrentDir _getcwd
+#else
+#include <unistd.h>
+#define GetCurrentDir getcwd
+#endif
+
 std::string 
-File::GetCurrentWorkingDir()
-{
-    std::string cwd("\0",FILENAME_MAX+1);
-    return getcwd(&cwd[0],cwd.capacity());
+GetCurrentWorkingDir( void ) {
+  char buff[FILENAME_MAX];
+  GetCurrentDir( buff, FILENAME_MAX );
+  std::string current_working_dir(buff);
+  return current_working_dir;
 }
 
 char*
