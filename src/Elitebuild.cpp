@@ -45,9 +45,13 @@ int main(int argc, char *argv[])
         pch = strstr(argv[i], "-v");
         if(pch)
         {
+            BOLD_YELLOW_COLOR
             printlnf(ELITEBUILD_VERSION);
+            BOLD_GREEN_COLOR
             printlnf("-");
+            BOLD_CYAN_COLOR
             printlnf(ELITE_BUILD_STATE);
+            BLACK_COLOR
             Slashn
         }
     }
