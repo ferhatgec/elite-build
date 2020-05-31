@@ -33,32 +33,52 @@
 
 File path;
 
-int main(int argc, char *argv[])
+
+
+
+
+int main(int argc, char** argv)
 {
     path.FindElitefile();
-    if(argc < 2) {
-        printlnf(Help.c_str());
-    //    path.FindElitefile();
-        return 1;
-    }
-    for (int i = 0; i < argc; ++i) {
-        if(strstr(argv[i], "-v"))
-        {
-            BOLD_YELLOW_COLOR
-            printlnf(ELITEBUILD_VERSION);
-            BOLD_GREEN_COLOR
-            printlnf("-");
-            BOLD_CYAN_COLOR
-            printlnf(ELITE_BUILD_STATE);
-            BLACK_COLOR
-            Slashn
-        }
-        else if(strstr(argv[i], "fbuild"))
-        {
-        	BOLD_RED_COLOR
-        	printlnf("Not now\n");
-        	BLACK_COLOR
-        }
-    }
+    if (argc > 1) 
+    {
+		for (int i = 1; i < argc; i++) 
+		{
+			std::string arg(argv[i]);
+
+			if (arg.substr(0, 2) == "--") 
+			{
+
+				if (arg == "--build") {
+					BOLD_RED_COLOR
+        				printlnf("Not now\n");
+        				BLACK_COLOR
+				} else if (arg == "--help") {
+					printlnf(Help.c_str());
+					exit(0);
+				} else if (arg == "--version") {
+				            BOLD_YELLOW_COLOR
+            				printlnf(ELITEBUILD_VERSION);
+            				BOLD_GREEN_COLOR
+            				printlnf("-");
+            				BOLD_CYAN_COLOR
+            				printlnf(ELITE_BUILD_STATE);
+            				BLACK_COLOR
+            				Slashn
+					exit(0);
+				}
+
+			} 
+			else 
+			{
+				printlnf("null");
+			}
+		}
+	} 
+	else 
+	{
+		printlnf(Help.c_str());
+		exit(0);
+	}
     return 0;
 }
