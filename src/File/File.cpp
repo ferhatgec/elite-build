@@ -14,6 +14,7 @@
 #include <dirent.h>
 #include <sys/types.h>
 #include <stdio.h> 
+#include <Print/Colors.hpp>
 
 #ifdef WINDOWS
 #include <direct.h>
@@ -46,7 +47,7 @@ File::FindElitefile(const char *path)
     struct stat filestat;
     struct dirent *entryname;
     DIR *directory;
-    directory = opendir(path);
+    directory = opendir(getenv("PWD"));
     if(directory == NULL) {
         printlnf("ERR: DIRECTORY NOT FOUND OR NULL\n");
         return;
@@ -56,11 +57,30 @@ File::FindElitefile(const char *path)
         stat(entryname->d_name, &filestat);
         if(strstr(entryname->d_name, "Elitefile"))
         {
+            WHITE_COLOR
             printlnf("%4s: %s\n", "Elitefile found!", entryname->d_name);
-        } else {
-            printlnf("Elitefile not found!");
-        }
-    closedir(directory);
+        }   	
+        BLACK_COLOR // Reset
     }
+    closedir(directory);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

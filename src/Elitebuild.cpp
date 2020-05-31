@@ -35,6 +35,7 @@ File path;
 
 int main(int argc, char *argv[])
 {
+    path.FindElitefile("/home/fegeya/Desktop/elite-build");
     char * pch;
     if(argc < 2) {
         printlnf(Help.c_str());
