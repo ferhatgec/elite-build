@@ -36,15 +36,13 @@ File path;
 int main(int argc, char *argv[])
 {
     path.FindElitefile("/home/fegeya/Desktop/elite-build");
-    char * pch;
     if(argc < 2) {
         printlnf(Help.c_str());
     //    path.FindElitefile();
         return 1;
     }
     for (int i = 0; i < argc; ++i) {
-        pch = strstr(argv[i], "-v");
-        if(pch)
+        if(strstr(argv[i], "-v"))
         {
             BOLD_YELLOW_COLOR
             printlnf(ELITEBUILD_VERSION);
@@ -54,6 +52,12 @@ int main(int argc, char *argv[])
             printlnf(ELITE_BUILD_STATE);
             BLACK_COLOR
             Slashn
+        }
+        else if(strstr(argv[i], "fbuild"))
+        {
+        	BOLD_RED_COLOR
+        	printlnf("Not now\n");
+        	BLACK_COLOR
         }
     }
     return 0;
