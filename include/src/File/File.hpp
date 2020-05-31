@@ -24,7 +24,7 @@ std::string EraseAllSubString(std::string & mainString, const std::string & eras
 class File {
 public:
     virtual char* Path();
-    virtual void FindElitefile(const char *);
+    virtual void FindElitefile(); // PWD
     std::string GetCurrentWorkingDir();
 };
 

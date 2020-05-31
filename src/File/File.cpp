@@ -42,7 +42,7 @@ File::Path()
 }
 
 void
-File::FindElitefile(const char *path)
+File::FindElitefile()
 {
     struct stat filestat;
     struct dirent *entryname;
