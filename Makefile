@@ -6,11 +6,13 @@
 
 
 PREFIX = /bin/
-
 INCLUDEDIR = ./include/src/
 CFLAGS = -c -Wall -I$(INCLUDEDIR)
+
+SRCSYNTAXDIREC = ./src/Syntax/
 SRCFILEDIREC = ./src/File/
 SRCDIREC = ./src/
+
 GCC = gcc
 GPP = g++
 COMP = g++ -c
@@ -18,7 +20,9 @@ HECOMP = g++ -c $< -std=gnu++17 -o
 # CLEAN
 CLEANALL = elitebuild
 CLEAN = *.o
+
 HEADERFILE = File.o
+SYNTAXFILE = Syntax.o
 
 ifeq ($(OS),Windows_NT)
 	echo Windows_NT is not supported!
@@ -51,7 +55,10 @@ push:
 nall: cleanall
 
 headersfile: $(HEADERFILE)
+syntaxfile: $(SYNTAXFILE)
 
+%.o: $(SRCSYNTAXDIREC)%.cpp	
+	$(GPP) $(CFLAGS) -c $< -o $@
 
 %.o: $(SRCFILEDIREC)%.cpp
 	$(GPP) $(CFLAGS) -c $< -o $@
