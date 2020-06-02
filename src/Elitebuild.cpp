@@ -35,7 +35,7 @@
 #include "../include/src/Elitebuild.hpp"
 
 File path;
-
+SyntaxModel model;
 
 int main(int argc, char** argv)
 {
@@ -53,11 +53,14 @@ int main(int argc, char** argv)
 					BOLD_RED_COLOR
         				printlnf("Not now\n");
         				BLACK_COLOR
-				} else if (arg == "--help") {
+				} else if(arg == "--path") {
+					printlnf(model.Path().c_str());
+				}
+				else if (arg == "--help") {
 					printlnf(Help.c_str());
 					exit(0);
 				} else if (arg == "--version") {
-				            BOLD_YELLOW_COLOR
+				        BOLD_YELLOW_COLOR
             				printlnf(ELITEBUILD_VERSION);
             				BOLD_GREEN_COLOR
             				printlnf("-");

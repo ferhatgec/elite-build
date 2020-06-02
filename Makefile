@@ -34,9 +34,9 @@ else
 endif
 
 
-all: headersfile main clean
+all: headersfile syntaxfile main clean
 
-allp: headersfile mainc clean 
+allp: headersfile syntaxfile mainc clean 
 
 removeall: uninstall cleanall
 

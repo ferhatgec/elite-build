@@ -16,12 +16,26 @@ public:
 
 class SyntaxModel {
 public:
+    SyntaxModel() {}
+    ~SyntaxModel() {} 
+    
     // Path
-    std::string Path();
+    std::string Path() { 
+    	std::string path = getenv("PWD");
+    	path.append("/");
+	path.append("Elitefile");
+	return path;
+    }
     
     // Erase Function 
-    std::string EraseAllSubString(std::string & mainString, const std::string & erase);
-    
+    std::string EraseAllSubString(std::string & mainString, const std::string & erase) {
+        size_t pos = std::string::npos;
+    	while((pos = mainString.find(erase)) != std::string::npos)
+    	{
+    	    mainString.erase(pos, erase.length());
+    	}
+    	return mainString;
+    }    
 };
 
 
