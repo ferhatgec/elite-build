@@ -21,6 +21,13 @@ public:
 	
 	// Printlnf
 	std::string Printlnf = "printlnf";
+	
+	// Brackets
+	std::string BracketsBegin = "(";
+	std::string BracketsEnd = ")";
+	
+	// Quotation Marks
+	std::string QuotationMarks = "\"";
 };
 
 class Lexer {
@@ -38,6 +45,15 @@ public:
 	}
 	std::string FPrintlnf() {
 		return keywords.Printlnf;
+	}
+	std::string FBracketsBegin() {
+		return keywords.BracketsBegin;
+	}
+	std::string FBracketsEnd() {
+		return keywords.BracketsEnd;
+	}
+	std::string FQuotationMarks() {
+		return keywords.QuotationMarks;
 	}
 };
 
