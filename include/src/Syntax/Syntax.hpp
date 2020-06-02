@@ -7,6 +7,8 @@
 #ifndef SYNTAX_HPP
 #define SYNTAX_HPP
 
+#include "../Print/Print.hpp"
+#include "../Print/Colors.hpp"
 #include "../Lexer/Lexer.hpp"
 #include "../Elitebuild.hpp"
 #include <fstream>
@@ -32,6 +34,16 @@ public:
 	path.append("Elitefile");
 	return path;
     }
+        
+    // Erase Function 
+    std::string EraseAllSubString(std::string & mainString, const std::string & erase) {
+        size_t pos = std::string::npos;
+    	while((pos = mainString.find(erase)) != std::string::npos)
+    	{
+    	    mainString.erase(pos, erase.length());
+    	}
+    	return mainString;
+    }
     
     // Elitefile Read Function
     void ReadElitefile() {
@@ -42,18 +54,16 @@ public:
 				line.erase(0, line.length());
 				lex.FCommentLines();
 			}
+			
+			if(line.rfind(keywords.Printlnf + keywords.Whitespace, 0) == 0) {
+					std::cout << EraseAllSubString(line, keywords.Printlnf + keywords.Whitespace);
+			} else if(line.rfind(keywords.Printlnf + keywords.Whitespace, 0) == 0) {
+				BOLD_RED_COLOR
+				printlnf("Please put Whitespace front printlnf\n");
+				BLACK_COLOR 
+			}
     		}
     	}
-    }
-    
-    // Erase Function 
-    std::string EraseAllSubString(std::string & mainString, const std::string & erase) {
-        size_t pos = std::string::npos;
-    	while((pos = mainString.find(erase)) != std::string::npos)
-    	{
-    	    mainString.erase(pos, erase.length());
-    	}
-    	return mainString;
     }
     
     /*bool FindAllSubString(std::string & mainString, const std::string & findstr) {

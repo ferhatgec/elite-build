@@ -28,6 +28,9 @@ public:
 	
 	// Quotation Marks
 	std::string QuotationMarks = "\"";
+	
+	// Whitespace
+	std::string Whitespace = " ";
 };
 
 class Lexer {
