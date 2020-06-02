@@ -7,6 +7,7 @@
 #ifndef SYNTAX_HPP
 #define SYNTAX_HPP
 
+#include "../Lexer/Lexer.hpp"
 #include "../Elitebuild.hpp"
 #include <fstream>
 
@@ -16,6 +17,8 @@ public:
 };
 
 class SyntaxModel {
+	LexerKeywords keywords;
+	Lexer lex;
 public:
     SyntaxModel() {}
     ~SyntaxModel() {} 
@@ -35,8 +38,10 @@ public:
     	std::ifstream readfile(Path());
     	 if(readfile.is_open()) {
 		while (std::getline(readfile, line)) {
-    			printlnf(line.c_str());
-    			Slashn
+			if(line.rfind(keywords.CommentLines, 0) == 0) {
+				line.erase(0, line.length());
+				lex.FCommentLines();
+			}
     		}
     	}
     }

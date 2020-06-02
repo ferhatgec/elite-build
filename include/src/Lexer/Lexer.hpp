@@ -9,18 +9,36 @@
 
 #include "../Elitebuild.hpp"
 #include "../Syntax/Syntax.hpp"
+#include "../Print/Print.hpp"
+#include "../Print/Colors.hpp"
 
 struct LexerKeywords {
 public:
+	// Comments
 	std::string CommentLines = "//";
 	std::string MultiLineCommentLinesBegin = "/-";
 	std::string MultiLineCommentLinesEnd = "-/";
+	
+	// Printlnf
+	std::string Printlnf = "printlnf";
 };
 
 class Lexer {
-	SyntaxModel model;
+	LexerKeywords keywords;
 public:
+	std::string FCommentLines() {
+		return keywords.CommentLines;
+	}
 	
+	std::string FMultiLineCommentLinesBegin() {
+		return keywords.MultiLineCommentLinesBegin;	
+	}
+	std::string FMultiLineCommentLinesEnd() {
+		return keywords.MultiLineCommentLinesEnd;
+	}
+	std::string FPrintlnf() {
+		return keywords.Printlnf;
+	}
 };
 
 
