@@ -38,5 +38,39 @@
 std::string 
 Syntax::CommentLine()
 {
-
+	
 }
+
+std::string
+SyntaxModel::Path()
+{
+	std::string path = getenv("PWD");
+	path.append("Elitefile");
+	return path;
+}
+
+
+std::string 
+SyntaxModel::EraseAllSubString(std::string & mainString, const std::string & erase);
+{
+    size_t pos = std::string::npos;
+    while((pos = mainString.find(erase)) != std::string::npos)
+    {
+        mainString.erase(pos, erase.length());
+    }
+    return mainString;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

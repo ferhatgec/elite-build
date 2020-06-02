@@ -25,6 +25,9 @@
 // Help
 #include "../include/src/Help/Help.hpp"
 
+// Syntax 
+#include "../include/src/Syntax/Syntax.hpp"
+
 // File
 #include "../include/src/File/File.hpp"
 
@@ -32,9 +35,6 @@
 #include "../include/src/Elitebuild.hpp"
 
 File path;
-
-
-
 
 
 int main(int argc, char** argv)
