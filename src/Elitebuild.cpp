@@ -52,6 +52,7 @@ int main(int argc, char** argv)
 				if (arg == "--build") {
 					BOLD_RED_COLOR
         				printlnf("Not now\n");
+        				model.ReadElitefile();
         				BLACK_COLOR
 				} else if(arg == "--path") {
 					printlnf(model.Path().c_str());
@@ -71,7 +72,6 @@ int main(int argc, char** argv)
             				Slashn
 					exit(0);
 				}
-
 			} 
 			else 
 			{

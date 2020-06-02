@@ -25,14 +25,6 @@
 #include "../../include/src/Elitebuild.hpp"
 
 
-std::string 
-Syntax::CommentLine()
-{
-	
-}
-
-
-
 
 
 

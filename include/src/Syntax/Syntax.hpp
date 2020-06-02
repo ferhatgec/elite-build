@@ -8,6 +8,7 @@
 #define SYNTAX_HPP
 
 #include "../Elitebuild.hpp"
+#include <fstream>
 
 class Syntax {
 public:
@@ -19,12 +20,25 @@ public:
     SyntaxModel() {}
     ~SyntaxModel() {} 
     
+    std::string line;
+    
     // Path
     std::string Path() { 
     	std::string path = getenv("PWD");
     	path.append("/");
 	path.append("Elitefile");
 	return path;
+    }
+    
+    // Elitefile Read Function
+    void ReadElitefile() {
+    	std::ifstream readfile(Path());
+    	 if(readfile.is_open()) {
+		while (std::getline(readfile, line)) {
+    			printlnf(line.c_str());
+    			Slashn
+    		}
+    	}
     }
     
     // Erase Function 
@@ -35,7 +49,15 @@ public:
     	    mainString.erase(pos, erase.length());
     	}
     	return mainString;
-    }    
+    }
+    
+    /*bool FindAllSubString(std::string & mainString, const std::string & findstr) {
+        size_t pos = std::string::npos;
+    	while((pos = mainString.find(findstr)) != std::string::npos)
+    	{
+    	    return true;
+    	}
+    } */   
 };
 
 
