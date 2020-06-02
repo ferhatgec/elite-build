@@ -10,6 +10,8 @@
 #include <iostream>
 
 static std::string Help = "Welcome to Fegeya Elitebuild!\n"
-                   "-v : Shows version\n";
+		   "--build : Builds your project\n"
+                   "--version : Shows version\n"
+                   "--path : Shows path\n";
 
 #endif // HELP_HPP

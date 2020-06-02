@@ -55,6 +55,7 @@ int main(int argc, char** argv)
         				BLACK_COLOR
 				} else if(arg == "--path") {
 					printlnf(model.Path().c_str());
+					Slashn // printlnf("\n");
 				}
 				else if (arg == "--help") {
 					printlnf(Help.c_str());
