@@ -44,10 +44,9 @@ public:
     	}
     	return mainString;
     }
-    
     // Elitefile Read Function
     void ReadElitefile() {
-    	std::ifstream readfile(Path());
+    	 std::ifstream readfile(Path());
     	 if(readfile.is_open()) {
 		while (std::getline(readfile, line)) {
 			if(line.rfind(keywords.CommentLines, 0) == 0) {
