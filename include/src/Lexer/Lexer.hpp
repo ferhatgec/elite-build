@@ -33,6 +33,7 @@ public:
 	
 	// Sign
 	std::string EqualsSign = "=";
+	std::string NumberSign = "#";
 		
 	// Quotation Marks
 	std::string QuotationMarks = "\"";

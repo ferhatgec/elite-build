@@ -6,8 +6,8 @@
 - Distributed under the terms of the MIT License.	
 -/
 
-printlnf Hello Elite
-setname x
-setto 15
-system echo $x
+//printlnf Hello Elite
+setname SayHello
+setto Hello Elite
+printlnf #SayHello
 

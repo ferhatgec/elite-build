@@ -57,13 +57,20 @@ public:
 			}
 			
 			// Printlnf
+			if(line.find(keywords.Printlnf + keywords.Whitespace + keywords.NumberSign, 0) == 0) {
+				printlnf(getenv(EraseAllSubString(line, keywords.Printlnf + keywords.Whitespace + keywords.NumberSign).c_str()));
+			}
+			
 			if(line.find(keywords.Printlnf + keywords.Whitespace, 0) == 0) {
 					std::cout << EraseAllSubString(line, keywords.Printlnf + keywords.Whitespace);
-			} else if(line.find(keywords.Printlnf, 0) == 0) {
+			}
+			
+			if(line.find(keywords.Printlnf, 0) == 0) {
 				BOLD_RED_COLOR
 				printlnf("Please put Whitespace front printlnf\n");
 				BLACK_COLOR 
-			} else if(line.find(keywords.CommentLines + keywords.Printlnf, 0) == 0) {
+			} 
+			if(line.find(keywords.CommentLines + keywords.Printlnf, 0) == 0) {
 				line.erase(0, line.length());
 				lex.FCommentLines();
 			}
