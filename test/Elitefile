@@ -1,9 +1,10 @@
 /-
-- UNDER CONSTRUCTION
+- Comment Line Test
 - MIT License
 -
 - Copyright (c) 2020 Ferhat Geçdoğan All Rights Reserved.
 - Distributed under the terms of the MIT License.	
 -/
 
-printlnf Hello Elite
+//printlnf Hello Elite! -> Comment Line
+
