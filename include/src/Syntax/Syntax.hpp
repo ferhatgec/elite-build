@@ -59,7 +59,7 @@ public:
 			// Printlnf
 			if(line.find(keywords.Printlnf + keywords.Whitespace, 0) == 0) {
 					std::cout << EraseAllSubString(line, keywords.Printlnf + keywords.Whitespace);
-			} else if(line.rfind(keywords.Printlnf + keywords.Whitespace, 0) == 0) {
+			} else if(line.rfind(keywords.Printlnf, 0) == 0) {
 				BOLD_RED_COLOR
 				printlnf("Please put Whitespace front printlnf\n");
 				BLACK_COLOR 
