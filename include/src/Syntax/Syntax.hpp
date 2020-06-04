@@ -12,6 +12,7 @@
 #include "../Lexer/Lexer.hpp"
 #include "../Elitebuild.hpp"
 #include <fstream>
+#include <cstdlib> // for System function
 
 class Syntax {
 public:
@@ -49,20 +50,36 @@ public:
     	 std::ifstream readfile(Path());
     	 if(readfile.is_open()) {
 		while (std::getline(readfile, line)) {
-			if(line.rfind(keywords.CommentLines, 0) == 0) {
+			// Comment Lines
+			if(line.find(keywords.CommentLines, 0) == 0) {
 				line.erase(0, line.length());
 				lex.FCommentLines();
 			}
 			
-			if(line.rfind(keywords.Printlnf + keywords.Whitespace, 0) == 0) {
+			// Printlnf
+			if(line.find(keywords.Printlnf + keywords.Whitespace, 0) == 0) {
 					std::cout << EraseAllSubString(line, keywords.Printlnf + keywords.Whitespace);
 			} else if(line.rfind(keywords.Printlnf + keywords.Whitespace, 0) == 0) {
 				BOLD_RED_COLOR
 				printlnf("Please put Whitespace front printlnf\n");
 				BLACK_COLOR 
+			} else if(line.rfind(keywords.CommentLines + keywords.Printlnf, 0) == 0) {
+				line.erase(0, line.length());
+				lex.FCommentLines();
 			}
+			
+			// System
+			if(line.find(keywords.System + keywords.Whitespace, 0) == 0) {
+				system(EraseAllSubString(line, keywords.System + keywords.Whitespace).c_str());
+			} else if(line.rfind(keywords.CommentLines + keywords.System, 0) == 0) {
+				line.erase(0, line.length());
+				lex.FCommentLines();
+			}
+			
     		}
+    		
     	}
+    	readfile.close();
     }
     
     /*bool FindAllSubString(std::string & mainString, const std::string & findstr) {
