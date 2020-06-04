@@ -27,7 +27,7 @@ public:
     ~SyntaxModel() {} 
     
     std::string line;
-    
+    std::string SetName;
     // Path
     std::string Path() { 
     	std::string path = getenv("PWD");
@@ -59,11 +59,11 @@ public:
 			// Printlnf
 			if(line.find(keywords.Printlnf + keywords.Whitespace, 0) == 0) {
 					std::cout << EraseAllSubString(line, keywords.Printlnf + keywords.Whitespace);
-			} else if(line.rfind(keywords.Printlnf, 0) == 0) {
+			} else if(line.find(keywords.Printlnf, 0) == 0) {
 				BOLD_RED_COLOR
 				printlnf("Please put Whitespace front printlnf\n");
 				BLACK_COLOR 
-			} else if(line.rfind(keywords.CommentLines + keywords.Printlnf, 0) == 0) {
+			} else if(line.find(keywords.CommentLines + keywords.Printlnf, 0) == 0) {
 				line.erase(0, line.length());
 				lex.FCommentLines();
 			}
@@ -71,11 +71,20 @@ public:
 			// System
 			if(line.find(keywords.System + keywords.Whitespace, 0) == 0) {
 				system(EraseAllSubString(line, keywords.System + keywords.Whitespace).c_str());
-			} else if(line.rfind(keywords.CommentLines + keywords.System, 0) == 0) {
+			} else if(line.find(keywords.CommentLines + keywords.System, 0) == 0) {
 				line.erase(0, line.length());
 				lex.FCommentLines();
 			}
 			
+			// Set name
+			if(line.find(keywords.SetEnvironmentName + keywords.Whitespace, 0) == 0) {
+					SetName = EraseAllSubString(line, keywords.SetEnvironmentName + keywords.Whitespace);
+			}
+			
+			// Set name to
+			if(line.find(keywords.SetEnvironmentNameTo + keywords.Whitespace, 0) == 0) {
+    			setenv(SetName.c_str(), EraseAllSubString(line, keywords.SetEnvironmentNameTo + keywords.Whitespace).c_str(), true);
+    	}
     		}
     		
     	}

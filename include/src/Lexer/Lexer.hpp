@@ -28,10 +28,15 @@ public:
 	
 	// Integration 
 	std::string System = "system";
+	std::string SetEnvironmentName = "setname";
+	std::string SetEnvironmentNameTo = "setto";
 	
+	// Sign
+	std::string EqualsSign = "=";
+		
 	// Quotation Marks
 	std::string QuotationMarks = "\"";
-	
+
 	// Whitespace
 	std::string Whitespace = " ";
 };
@@ -47,6 +52,7 @@ public:
 	std::string FBracketsEnd() { return keywords.BracketsEnd; }
 	std::string FQuotationMarks() { return keywords.QuotationMarks; }
 	std::string FSystem() { return keywords.System; }
+	std::string FEqualsSign() { return keywords.EqualsSign; }
 };
 
 

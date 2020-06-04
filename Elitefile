@@ -7,3 +7,7 @@
 -/
 
 printlnf Hello Elite
+setname x
+setto 15
+system echo $x
+
