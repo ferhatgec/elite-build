@@ -13,7 +13,6 @@ SRCSYNTAXDIREC = ./src/Syntax/
 SRCFILEDIREC = ./src/File/
 SRCDIREC = ./src/
 
-GCC = gcc
 GPP = g++
 COMP = g++ -c
 HECOMP = g++ -c $< -std=gnu++17 -o
