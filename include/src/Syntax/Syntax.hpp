@@ -56,6 +56,10 @@ public:
 				lex.FCommentLines();
 			}
 			
+			if(line.find(keywords.GetEnvr + keywords.Whitespace, 0) == 0) {
+				getenv(EraseAllSubString(line, keywords.GetEnvr + keywords.Whitespace).c_str());
+			}
+			
 			// Printlnf
 			if(line.find(keywords.Printlnf + keywords.Whitespace + keywords.NumberSign, 0) == 0) {
 				printlnf(getenv(EraseAllSubString(line, keywords.Printlnf + keywords.Whitespace + keywords.NumberSign).c_str()));
@@ -73,6 +77,11 @@ public:
 			if(line.find(keywords.CommentLines + keywords.Printlnf, 0) == 0) {
 				line.erase(0, line.length());
 				lex.FCommentLines();
+			}
+			
+			if(line.find(keywords.System + keywords.Whitespace + keywords.NumberSign, 0) == 0) {
+				system(getenv(EraseAllSubString(line, keywords.System + keywords.Whitespace + keywords.NumberSign).c_str()));
+			
 			}
 			
 			// System

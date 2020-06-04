@@ -30,6 +30,7 @@ public:
 	std::string System = "system";
 	std::string SetEnvironmentName = "setname";
 	std::string SetEnvironmentNameTo = "setto";
+	std::string GetEnvr = "getenvr";
 	
 	// Sign
 	std::string EqualsSign = "=";
@@ -54,6 +55,7 @@ public:
 	std::string FQuotationMarks() { return keywords.QuotationMarks; }
 	std::string FSystem() { return keywords.System; }
 	std::string FEqualsSign() { return keywords.EqualsSign; }
+	std::string FGetEnvr() { return keywords.GetEnvr; }
 };
 
 
