@@ -6,5 +6,6 @@ pool:
 
 steps:
 - script: |
-    make
-  displayName: 'make'
+    git clone https://github.com/FerhatGec/elite-build.git && cd elite-build
+    ./elitebuild --build
+  displayName: 'elitebuild'

@@ -31,11 +31,15 @@
 // File
 #include "../include/src/File/File.hpp"
 
+// Version Generator
+#include "../include/src/Version/Version.hpp"
+
 // Main
 #include "../include/src/Elitebuild.hpp"
 
 File path;
 SyntaxModel model;
+Version version_generator;
 
 int main(int argc, char** argv)
 {
@@ -68,6 +72,8 @@ int main(int argc, char** argv)
             				printlnf("-");
             				BOLD_CYAN_COLOR
             				printlnf(ELITE_BUILD_STATE);
+            				BOLD_MAGENTA_COLOR
+            				printlnf(version_generator.VersionGenerator().c_str());
             				BLACK_COLOR
             				Slashn
 					exit(0);
