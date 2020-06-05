@@ -26,6 +26,9 @@ public:
 	std::string BracketsBegin = "(";
 	std::string BracketsEnd = ")";
 	
+	// Definitions
+	std::string ArrowType = "->"; 
+	
 	// Integration 
 	std::string System = "system";
 	std::string SetEnvironmentName = "setname";
@@ -58,6 +61,7 @@ public:
 	std::string FSetEnvironmentName() { return keywords.SetEnvironmentName; }
 	std::string FSetEnvironmentNameTo() { return keywords.SetEnvironmentNameTo; }
 	std::string FGetEnvr() { return keywords.GetEnvr; }
+	std::string FArrowType() { return keywords.ArrowType; }
 };
 
 

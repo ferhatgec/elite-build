@@ -9,5 +9,5 @@
 setname Allofthem
 setto g++ -s -Wall -I./include/src/ ./src/Elitebuild.cpp ./src/Syntax/Syntax.cpp ./src/File/File.cpp -o elitebuild
 
-system #Allofthem
+system ->Allofthem
 
