@@ -6,6 +6,9 @@
 - Distributed under the terms of the MIT License.	
 -/
 
+setname OutputFile
+setto elitebuild
+
 setname Allofthem
 setto g++ -s -Wall -I./include/src/ ./src/Elitebuild.cpp ./src/Syntax/Syntax.cpp ./src/File/File.cpp -o elitebuild
 
