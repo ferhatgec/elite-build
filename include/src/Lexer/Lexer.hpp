@@ -55,6 +55,8 @@ public:
 	std::string FQuotationMarks() { return keywords.QuotationMarks; }
 	std::string FSystem() { return keywords.System; }
 	std::string FEqualsSign() { return keywords.EqualsSign; }
+	std::string FSetEnvironmentName() { return keywords.SetEnvironmentName; }
+	std::string FSetEnvironmentNameTo() { return keywords.SetEnvironmentNameTo; }
 	std::string FGetEnvr() { return keywords.GetEnvr; }
 };
 
