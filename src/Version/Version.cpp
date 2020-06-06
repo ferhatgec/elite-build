@@ -16,13 +16,17 @@
 #include <stdio.h> 
 #include <Print/Colors.hpp>
 #include <Version/Version.hpp>
+#include <Syntax/Syntax.hpp>
 
 const std::string compilation_date = __DATE__;
 const std::string compilation_time = __TIME__;
 
+SyntaxModel remove_model; // For EraseAllSubString
+std::string ftime(compilation_time); // Convert
+
 std::string 
 Version::VersionGenerator() {
-	return "elitev" + compilation_date;
+	return "elitev" + remove_model.EraseAllSubString(ftime, ":");
 };
 
 
