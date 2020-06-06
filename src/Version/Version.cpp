@@ -30,16 +30,19 @@ Version::VersionGenerator() {
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+void 
+Version::PrintVersion() {
+	BOLD_YELLOW_COLOR
+        printlnf(ELITEBUILD_VERSION);
+        BOLD_GREEN_COLOR
+        printlnf("-");
+        BOLD_CYAN_COLOR
+        printlnf(ELITE_BUILD_STATE);
+        BOLD_BLUE_COLOR
+        printlnf("-");
+        BOLD_MAGENTA_COLOR
+        printlnf(VersionGenerator().c_str());
+        BLACK_COLOR
+        Slashn
+}
 

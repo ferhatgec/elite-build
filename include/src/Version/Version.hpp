@@ -12,6 +12,7 @@
 struct Version {
 public:
 	std::string VersionGenerator();
+	void PrintVersion();
 };
 
 #endif // VERSION_HPP
