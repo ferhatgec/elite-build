@@ -7,13 +7,13 @@
 [![Build Status](https://dev.azure.com/ferhatgectao/elite-build/_apis/build/status/FerhatGec.elite-build?branchName=master)](https://dev.azure.com/ferhatgectao/elite-build/_build/latest?definitionId=3&branchName=master)
 
 ## Features:
- * Simple for everyone.
+ * Simple for everyone. :open_mouth:
  * For build and link your codes with convenience.
- * Looks like ScriftLang's syntax.
+ * Looks like ScriftLang's syntax. :open_mouth:
  * Faster.
  * Cool!
  * Easy-readable.
- * Powered by Scrift's libraries.
+ * Powered by Scrift's libraries. :open_mouth:
  
 
 
