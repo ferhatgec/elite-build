@@ -59,25 +59,37 @@ int main(int argc, char** argv)
         				model.ReadElitefile();
         				BLACK_COLOR
 				} else if(arg == "--path") {
+					WHITE_COLOR
 					printlnf(model.Path().c_str());
 					Slashn // printlnf("\n");
+					BLACK_COLOR
 				}
 				else if (arg == "--help") {
+					BOLD_RED_COLOR
 					printlnf(Help.c_str());
+					BLACK_COLOR
 					exit(0);
 				} else if (arg == "--version") {
 					version_generator.PrintVersion();
+					exit(0);
+				} else {
+					BOLD_RED_COLOR
+					printlnf("Command or argument is not found!\n");
+					WHITE_COLOR
+					printlnf(Help.c_str());
+					BLACK_COLOR
 					exit(0);
 				}
 			} 
 			else 
 			{
-				printlnf("null");
+				printlnf(Help.c_str());
 			}
 		}
 	} 
 	else 
 	{
+		WHITE_COLOR
 		printlnf(Help.c_str());
 		exit(0);
 	}

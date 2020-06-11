@@ -15,7 +15,8 @@
 #include <sys/types.h>
 #include <stdio.h> 
 #include <Print/Colors.hpp>
-
+#include "../../Library/FileSystemPlusPlus.h"
+       
 #ifdef WINDOWS
 #include <direct.h>
 #define GetCurrentDir _getcwd
@@ -47,7 +48,7 @@ File::FindElitefile()
     struct stat filestat;
     struct dirent *entryname;
     DIR *directory;
-    directory = opendir(getenv("PWD"));
+    directory = opendir(fsplusplus::GetCurrentWorkingDir().c_str());
     if(directory == NULL) {
         printlnf("ERR: DIRECTORY NOT FOUND OR NULL\n");
         return;
