@@ -10,7 +10,7 @@
 #include "Print/Print.hpp"
 #include "Help/Help.hpp"
 
-#define ELITEBUILD_VERSION "0.1"
+#define ELITEBUILD_VERSION "0.2"
 #define ELITE_BUILD_STATE "alpha"
 
 #define Slashn printlnf("\n");
