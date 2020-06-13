@@ -28,6 +28,8 @@ public:
 	
 	// Definitions
 	std::string ArrowType = "->"; 
+	std::string GetBegin = "#<";
+	std::string GetEnd = ">#";
 	
 	// Integration 
 	std::string System = "system";

@@ -37,6 +37,23 @@ public:
 	path.append("Elitefile");
 	return path;
     }
+    
+    // Get Between String    
+    void GetBtwString(std::string oStr, std::string sStr1, std::string sStr2, std::string &rStr)
+    {  
+    int start = oStr.find(sStr1);   
+    if (start >= 0)     
+    {       
+      std::string tstr = oStr.substr(start + sStr1.length());        
+      int stop = tstr.find(sStr2);      
+      if (stop >1)          
+        rStr = oStr.substr(start + sStr1.length(), stop);
+      else
+        rStr ="error";  
+    }
+    else
+       rStr = "error"; 
+    }    
         
     // Erase Function 
     std::string EraseAllSubString(std::string & mainString, const std::string & erase) {
@@ -51,7 +68,16 @@ public:
     void ReadElitefile() {
     	 std::ifstream readfile(Path());
     	 if(readfile.is_open()) {
-		while (std::getline(readfile, line)) {
+		while (std::getline(readfile, line)) {							
+			if(strstr(line.c_str(), keywords.GetBegin.c_str())) {
+			        std::string output;
+				GetBtwString(line, keywords.GetBegin, keywords.GetEnd, output);
+				line = EraseAllSubString(line, keywords.GetBegin + output + keywords.GetEnd);
+				//std::cout << line; For testing
+				line.append(getenv(output.c_str()));
+				//std::cout << line; For testing
+			}
+			
 			// Comment Lines
 			if(line.find(keywords.CommentLines, 0) == 0) {
 				line.erase(0, line.length());
