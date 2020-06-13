@@ -26,7 +26,7 @@
 #endif
 
 std::string 
-GetCurrentWorkingDir( void ) {
+File::GetCurrentWorkingDir( void ) {
   char buff[FILENAME_MAX];
   GetCurrentDir( buff, FILENAME_MAX );
   std::string current_working_dir(buff);

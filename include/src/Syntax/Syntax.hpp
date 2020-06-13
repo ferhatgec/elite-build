@@ -7,6 +7,7 @@
 #ifndef SYNTAX_HPP
 #define SYNTAX_HPP
 
+#include "../File/File.hpp"
 #include "../Print/Print.hpp"
 #include "../Print/Colors.hpp"
 #include "../Lexer/Lexer.hpp"
@@ -20,6 +21,7 @@ public:
 };
 
 class SyntaxModel {
+	File pwd;
 	LexerKeywords keywords;
 	Lexer lex;
 public:
@@ -30,7 +32,7 @@ public:
     std::string SetName;
     // Path
     std::string Path() { 
-    	std::string path = getenv("PWD");
+    	std::string path = pwd.GetCurrentWorkingDir();
     	path.append("/");
 	path.append("Elitefile");
 	return path;

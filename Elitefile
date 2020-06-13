@@ -10,7 +10,7 @@ setname OutputFile
 setto elitebuild
 
 setname Allofthem
-setto g++ -s -Wall -I./include/src/ ./src/Syntax/Syntax.cpp ./src/File/File.cpp ./src/Version/Version.cpp ./src/Elitebuild.cpp  -o elitebuild
+setto g++ -Wall -I./include/src/ ./src/Syntax/Syntax.cpp ./src/File/File.cpp ./src/Version/Version.cpp ./src/Elitebuild.cpp  -o elitebuild
 
 setname Clean
 setto rm -f File.o Syntax.o
